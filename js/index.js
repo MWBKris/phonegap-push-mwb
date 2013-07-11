@@ -40,7 +40,7 @@ var app = {
 
         app.receivedEvent('deviceready');
 
-        
+        // $("#app-status-ul").append('<li>deviceready event received</li>');
                 
         // document.addEventListener("backbutton", function(e)
         // {
@@ -88,7 +88,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        $("#app-status-ul").append('<li>deviceready event received</li>');
+
 
         console.log('Received Event: ' + id);
     }
