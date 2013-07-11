@@ -38,7 +38,9 @@ var app = {
     onDeviceReady: function() {
         //alert('test-ondeviceready');
 
-        //$("#app-status-ul").append('<li>deviceready event received</li>');
+        app.receivedEvent('deviceready');
+
+        
                 
         // document.addEventListener("backbutton", function(e)
         // {
@@ -75,7 +77,6 @@ var app = {
         //     alert(txt); 
         //         } 
 
-       // app.receivedEvent('deviceready');
     },
 
     // Update DOM on a Received Event
@@ -86,6 +87,8 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
+
+        $("#app-status-ul").append('<li>deviceready event received</li>');
 
         console.log('Received Event: ' + id);
     }
