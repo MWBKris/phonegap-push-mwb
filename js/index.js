@@ -39,6 +39,7 @@ var app = {
 		
         app.receivedEvent('deviceready');
 		alert('stap1');
+		alert($("#app-status-ul"));
          $("#app-status-ul").append('<li>deviceready event received</li>');
         alert('stap2');
          document.addEventListener("backbutton", function(e)
