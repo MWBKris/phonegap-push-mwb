@@ -36,28 +36,27 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        alert('test-ondeviceready');
 
         app.receivedEvent('deviceready');
 
-        // $("#app-status-ul").append('<li>deviceready event received</li>');
+         $("#app-status-ul").append('<li>deviceready event received</li>');
                 
-        // document.addEventListener("backbutton", function(e)
-        // {
-        //     $("#app-status-ul").append('<li>backbutton event received</li>');
-            
-        //     if( $("#home").length > 0)
-        //     {
-        //         // call this to get a new token each time. don't call it to reuse existing token.
-        //         //pushNotification.unregister(successHandler, errorHandler);
-        //         e.preventDefault();
-        //         navigator.app.exitApp();
-        //     }
-        //     else
-        //     {
-        //         navigator.app.backHistory();
-        //     }
-        // }, false);
+         document.addEventListener("backbutton", function(e)
+         {
+             $("#app-status-ul").append('<li>backbutton event received</li>');
+          
+             if( $("#home").length > 0)
+             {
+                 // call this to get a new token each time. don't call it to reuse existing token.
+                 //pushNotification.unregister(successHandler, errorHandler);
+                 e.preventDefault();
+                navigator.app.exitApp();
+             }
+             else
+             {
+                 navigator.app.backHistory();
+             }
+        }, false);
 
         // try 
         // { 
@@ -81,7 +80,6 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-		alert('test');
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
