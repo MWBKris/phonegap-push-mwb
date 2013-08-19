@@ -61,6 +61,7 @@ var app = {
          try 
          { 
              pushNotification = window.plugins.pushNotification;
+			 alert(device.platform);
              if (device.platform == 'android' || device.platform == 'Android') {
                  $("#app-status-ul").append('<li>registering android</li>');
                  pushNotification.register(successHandler, errorHandler, {"senderID":"395880463247","ecb":"onNotificationGCM"});     // required!
@@ -80,7 +81,7 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-		alert('test');
+		alert('start');
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
