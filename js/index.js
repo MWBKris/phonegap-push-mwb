@@ -79,6 +79,10 @@ var app = {
                  } 
 
     },
+	
+	successHandler: function(){
+		alert('succes');
+	},
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
