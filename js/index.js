@@ -41,11 +41,11 @@ var app = {
 		alert("test2");
          $("#app-status-ul").append('<li>deviceready event received</li>');
         alert("test3");
-         document.addEventListener("backbutton", function(e)
+   /*      document.addEventListener("backbutton", function(e)
          {
              $("#app-status-ul").append('<li>backbutton event received</li>');
           
-             if( $("#home").length > 0)
+          if( $("#home").length > 0)
              {
                  // call this to get a new token each time. don't call it to reuse existing token.
                  //pushNotification.unregister(successHandler, errorHandler);
@@ -56,7 +56,7 @@ var app = {
              {
                  navigator.app.backHistory();
              }
-        }, false);
+        }, false);*/
 
         // try 
         // { 
