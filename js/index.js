@@ -38,9 +38,9 @@ var app = {
     onDeviceReady: function() {
 		
         app.receivedEvent('deviceready');
-		
+		alert('stap1');
          $("#app-status-ul").append('<li>deviceready event received</li>');
-                
+        alert('stap2');
          document.addEventListener("backbutton", function(e)
          {
              $("#app-status-ul").append('<li>backbutton event received</li>');
@@ -57,6 +57,8 @@ var app = {
                  navigator.app.backHistory();
              }
          }, false);
+		 
+		 alert('stap3');
 
          try 
          { 
