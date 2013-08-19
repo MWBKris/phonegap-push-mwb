@@ -39,12 +39,10 @@ var app = {
 		
         app.receivedEvent('deviceready');
 		alert('stap1');
-		alert($("#app-status-ul"));
-         $("#app-status-ul").append('<li>deviceready event received</li>');
-        alert('stap2');
+         alert('deviceready event received');
          document.addEventListener("backbutton", function(e)
          {
-             $("#app-status-ul").append('<li>backbutton event received</li>');
+             alert('backbutton event received');
           
              if( $("#home").length > 0)
              {
@@ -66,10 +64,10 @@ var app = {
              pushNotification = window.plugins.pushNotification;
 			 alert(device.platform);
              if (device.platform == 'android' || device.platform == 'Android') {
-                 $("#app-status-ul").append('<li>registering android</li>');
+                 alert('<li>registering android</li>');
                  pushNotification.register(successHandler, errorHandler, {"senderID":"395880463247","ecb":"onNotificationGCM"});     // required!
              } else {
-                 $("#app-status-ul").append('<li>registering iOS</li>');
+                 alert('<li>registering iOS</li>');
                  pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});    // required!
              }
          }
