@@ -38,7 +38,6 @@ var app = {
     onDeviceReady: function() {
 		
         app.receivedEvent('deviceready');
-		alert('stap1');
          alert('deviceready event received');
          document.addEventListener("backbutton", function(e)
          {
