@@ -36,11 +36,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-
+		alert("test1");
         app.receivedEvent('deviceready');
-
+		alert("test2");
          $("#app-status-ul").append('<li>deviceready event received</li>');
-                
+        alert("test3");
          document.addEventListener("backbutton", function(e)
          {
              $("#app-status-ul").append('<li>backbutton event received</li>');
