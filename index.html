@@ -81,20 +81,18 @@ if ( e.regid.length > 0 )
 $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
 // Your GCM push server needs to know the regID before it can push to this device
 // here is where you might want to send it the regID for later use.
-
 $.ajax({
-dataType: "json",
-url: "http://www.hostingbvba.be/demo10/register.php,
-data: {name:'kris',email:'kris@my-websitebuilder.com',regId:e.regid},
-success: function(html){
-    $("#app-status-ul").append('gelukt');
-  }
- error: function(html){
-    $("#app-status-ul").append('niet gelukt');
-  }
+    beforeSend: function() { textreplace(description); },
+    type: "POST",  
+    url: "http://www.hostingbvba.be/demo10/register.php",
+    data: "name=kris&email=kris@my-websitebuilder.com&regId="+ e.regid, 
+    success: function(){  
+       $("#app-status-ul").append('<li>GELUKT</li>'); 
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+        $("#app-status-ul").append('<li>NIET GELUKT</li>');  
+    }       
 });
-
-
 console.log("regID = " + e.regID);
 }
                     break;
